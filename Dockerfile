@@ -27,6 +27,9 @@ RUN ["/bin/bash", "-c" , "source activate ipykernel_py2 && conda install pandas 
 RUN git clone https://github.com/PaulMakepeace/refine-client-py && \
   cp -pR refine-client-py/google ./  
 
+# Copy Notebook file
+COPY . .
+
 USER jovyan
 
 MAINTAINER Nikolaus Parulian <nikolaus.nova@gmail.com>
