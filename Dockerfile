@@ -14,6 +14,7 @@ RUN wget https://github.com/OpenRefine/OpenRefine/releases/download/3.1/openrefi
 
 RUN conda create -n ipykernel_py2 python=2 ipykernel && \
   conda activate ipykernel_py2   && \
+  conda init bash && \
   python -m ipykernel install --user
 
 RUN conda activate ipykernel_py2 && \
