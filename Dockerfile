@@ -14,12 +14,14 @@ RUN wget https://github.com/OpenRefine/OpenRefine/releases/download/3.1/openrefi
 
 RUN conda create --quiet --yes -n ipykernel_py2 python=2 ipykernel 
 
-#RUN conda init bash && \
-#  conda activate ipykernel_py2   && \  
-#  python -m ipykernel install --user
+RUN conda init bash 
+RUN bash && \
+  conda activate ipykernel_py2   && \  
+  python -m ipykernel install --user
 
-#RUN conda activate ipykernel_py2 && \
-#  conda install pandas matplotlib numpy 
+RUN bash && \
+  conda activate ipykernel_py2 && \
+  conda install pandas matplotlib numpy 
 
 USER jovyan
 
