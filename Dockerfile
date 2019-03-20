@@ -14,19 +14,7 @@ RUN wget https://github.com/OpenRefine/OpenRefine/releases/download/3.1/openrefi
 
 RUN conda create --quiet --yes -n ipykernel_py2 python=2 ipykernel 
 
-USER jovyan
-
-RUN conda init bash 
-
-USER root
-
-USER jovyan
-
-RUN conda activate ipykernel_py2 && \
-  python -m ipykernel install --user
-
-RUN conda activate ipykernel_py2 && \
-  conda install pandas matplotlib numpy 
+RUN ["/bin/bash", "-c" , "source activate ipykernel_py2 && ipython kernel install && source deactivate"]
 
 USER jovyan
 
