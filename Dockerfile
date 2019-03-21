@@ -30,10 +30,13 @@ RUN wget https://github.com/OpenRefine/OpenRefine/releases/download/3.1/openrefi
   chmod +x openrefine-3.1/refine
 
 # Copy Notebook file
+user root
+
 COPY . .
 
-RUN chown -R jovyan:jovyan *
+RUN chown -R jovyan:users *
 
+user jovyan
 RUN chmod +x start_refine.sh
 
 RUN ["/bin/bash","-c","./start_refine.sh"]
