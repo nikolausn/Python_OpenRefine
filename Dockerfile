@@ -23,13 +23,18 @@ USER jovyan
 RUN git clone https://github.com/PaulMakepeace/refine-client-py && \
   cp -pR refine-client-py/google ./  
 
-# Copy Notebook file
-COPY . .
 
 # install and run openrefine
 RUN wget https://github.com/OpenRefine/OpenRefine/releases/download/3.1/openrefine-linux-3.1.tar.gz -O openrefine.tar.gz && \
   tar -xvzf openrefine.tar.gz && \
   chmod +x openrefine-3.1/refine
+
+# Copy Notebook file
+COPY . .
+
+RUN chown -R jovyan:jovyan *
+
+RUN chmod +x start_refine.sh
 
 RUN ["/bin/bash","-c","./start_refine.sh"]
 
