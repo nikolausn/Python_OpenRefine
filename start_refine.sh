@@ -1,1 +1,1 @@
-nohup ./openrefine-3.1/refine &
+nohup ./openrefine-3.0/refine &
