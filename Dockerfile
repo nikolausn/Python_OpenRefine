@@ -39,6 +39,7 @@ RUN chown -R jovyan:users *
 user jovyan
 RUN chmod +x start_refine.sh
 
-RUN ["/bin/bash","-c","./start_refine.sh"]
+CMD ["start_refine.sh"]
+
 
 MAINTAINER Nikolaus Parulian <nikolaus.nova@gmail.com>
