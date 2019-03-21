@@ -31,6 +31,6 @@ RUN wget https://github.com/OpenRefine/OpenRefine/releases/download/3.1/openrefi
   tar -xvzf openrefine.tar.gz && \
   chmod +x openrefine-3.1/refine
 
-RUN ["nohup","/bin/bash","-c","./openrefine-3.1/refine","&"]
+RUN ["nohup","/bin/bash","-c","./openrefine-3.1/refine &"]
 
 MAINTAINER Nikolaus Parulian <nikolaus.nova@gmail.com>
