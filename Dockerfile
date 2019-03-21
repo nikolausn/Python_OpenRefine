@@ -27,7 +27,7 @@ RUN git clone https://github.com/PaulMakepeace/refine-client-py && \
 # install and run openrefine
 RUN wget https://github.com/OpenRefine/OpenRefine/releases/download/3.0/openrefine-linux-3.0.tar.gz -O openrefine.tar.gz && \
   tar -xvzf openrefine.tar.gz && \
-  chmod +x openrefine-3.1/refine
+  chmod +x openrefine-3.0/refine
 
 # Copy Notebook file
 user root
