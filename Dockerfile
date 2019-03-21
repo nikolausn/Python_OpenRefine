@@ -29,8 +29,8 @@ COPY . .
 # install and run openrefine
 RUN wget https://github.com/OpenRefine/OpenRefine/releases/download/3.1/openrefine-linux-3.1.tar.gz -O openrefine.tar.gz && \
   tar -xvzf openrefine.tar.gz && \
-  chmod +x openrefine-3.1/refine && \
-  nohup bash -c "./openrefine-3.1/refine &" 
+  chmod +x openrefine-3.1/refine
 
+RUN ["nohup","/bin/bash","-c","./openrefine-3.1/refine","&"]
 
 MAINTAINER Nikolaus Parulian <nikolaus.nova@gmail.com>
